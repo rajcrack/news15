@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class homepage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   num days = 20;
 
   @override

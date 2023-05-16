@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:news15/pages/login_page.dart';
 
-import 'homepage.dart';
+import 'pages/homepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     int days = 30;
 
-    return MaterialApp(home: homepage());
+    return MaterialApp(
+      routes: {"login": (context) => HomePage(), "/": (context) => LoginPage()},
+    );
   }
 }
