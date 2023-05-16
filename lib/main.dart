@@ -15,7 +15,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // ignore: prefer_const_constructors
-      routes: {"login": (context) => HomePage(), "/": (context) => LoginPage()},
+      routes: {
+        "login": (context) => HomePage(),
+        "/": (context) => LoginPage()
+      },
     );
   }
 }
