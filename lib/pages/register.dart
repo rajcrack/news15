@@ -39,7 +39,7 @@ class _MyRegisterState extends State<MyRegister> {
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                  'assets/register.png'),
+                  'assets/images/register.png'),
               fit: BoxFit.cover),
         ),
         child: Scaffold(

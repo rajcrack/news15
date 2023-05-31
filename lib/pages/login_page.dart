@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:news15/pages/register.dart';
+import '../pages/register.dart';
 import '../pages/homepage.dart';
 import '../utills/routes.dart';
 
@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                  'assets/immaes/register.png'),
+                  'assets/images/register.png'),
               fit: BoxFit.cover),
         ),
         child: Scaffold(

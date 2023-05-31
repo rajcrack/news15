@@ -2,10 +2,10 @@
 
 import 'package:flutter/material.dart';
 import '/utills/routes.dart';
-
 import 'pages/homepage.dart';
 import 'pages/login_page.dart';
 import 'pages/register.dart';
+import 'pages/news.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       // ignore: prefer_const_constructors
-      initialRoute: MyRoute.homeRoute,
+      initialRoute: MyRoute.newsRoute,
       routes: {
         MyRoute.homeRoute: (context) =>
             HomePage(),
@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
             LoginPage(),
         MyRoute.registerRoute: (context) =>
             MyRegister(),
+        MyRoute.newsRoute: (context) => News(),
       },
     );
   }
