@@ -2,19 +2,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:news15/pages/register.dart';
 import '../pages/homepage.dart';
 import '../utills/routes.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class MyRegister extends StatefulWidget {
+  const MyRegister({super.key});
 
   @override
-  State<LoginPage> createState() =>
-      _LoginPageState();
+  State<MyRegister> createState() =>
+      _MyRegisterState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _MyRegisterState extends State<MyRegister> {
   bool isvisible = false;
   final _formkey = GlobalKey<FormState>();
   moveToHome(BuildContext context) async {
@@ -26,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
       await Future.delayed(Duration(seconds: 5));
 
       await Navigator.pushNamed(
-          context, MyRoute.homeRoute);
+          context, MyRoute.loginRoute);
       setState(() {
         isvisible = false;
       });
@@ -40,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                  'assets/immaes/register.png'),
+                  'assets/register.png'),
               fit: BoxFit.cover),
         ),
         child: Scaffold(
@@ -54,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                   padding:
                       EdgeInsets.only(top: 22.00),
                   child: Text(
-                    "Welcome\n back",
+                    "SignUp Here",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 33.00,
@@ -75,6 +74,52 @@ class _LoginPageState extends State<LoginPage> {
                     key: _formkey,
                     child: Column(
                       children: [
+                        TextFormField(
+                          decoration: InputDecoration(
+                              fillColor: Colors
+                                  .grey.shade100,
+                              filled: true,
+                              hintText:
+                                  "First Name",
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius
+                                          .circular(
+                                              10))),
+                          validator: (value) {
+                            if (value == null ||
+                                value.isEmpty) {
+                              return "PLease enter your Name";
+                            }
+                            return null;
+                          },
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        TextFormField(
+                          decoration: InputDecoration(
+                              fillColor: Colors
+                                  .grey.shade100,
+                              filled: true,
+                              hintText:
+                                  "LastName",
+                              border: OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius
+                                          .circular(
+                                              10))),
+                          validator: (value) {
+                            if (value == null ||
+                                value.isEmpty) {
+                              return "Please enter your Last Name";
+                            }
+                            return null;
+                          },
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
                         TextFormField(
                           validator: (value) {
                             if (value == null ||
@@ -128,22 +173,12 @@ class _LoginPageState extends State<LoginPage> {
                         ElevatedButton(
                           onPressed: () =>
                               moveToHome(context),
-                          child: Text("Sign Up"),
+                          child: Text("SignUp"),
                           style: TextButton
                               .styleFrom(
                                   minimumSize:
                                       Size(200,
                                           49)),
-                        ),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.pushNamed(
-                                context,
-                                MyRoute
-                                    .registerRoute);
-                          },
-                          child: Text(
-                              "Don't have an acount! Sign Up"),
                         ),
                         SizedBox(
                           height: 30,

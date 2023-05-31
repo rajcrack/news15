@@ -1,10 +1,11 @@
 // ignore_for_file: prefer_const_constructors, duplicate_ignore
 
 import 'package:flutter/material.dart';
-import 'package:news15/pages/login_page.dart';
-import 'package:news15/utills/routes.dart';
+import '/utills/routes.dart';
 
 import 'pages/homepage.dart';
+import 'pages/login_page.dart';
+import 'pages/register.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,8 +22,12 @@ class MyApp extends StatelessWidget {
       // ignore: prefer_const_constructors
       initialRoute: MyRoute.homeRoute,
       routes: {
-        MyRoute.homeRoute: (context) => HomePage(),
-        MyRoute.loginRoute: (context) => LoginPage()
+        MyRoute.homeRoute: (context) =>
+            HomePage(),
+        MyRoute.loginRoute: (context) =>
+            LoginPage(),
+        MyRoute.registerRoute: (context) =>
+            MyRegister(),
       },
     );
   }
