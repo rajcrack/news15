@@ -1,9 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import '../pages/register.dart';
-import '../pages/homepage.dart';
 import '../utills/routes.dart';
 
 class LoginPage extends StatefulWidget {
@@ -25,6 +22,7 @@ class _LoginPageState extends State<LoginPage> {
 
       await Future.delayed(Duration(seconds: 5));
 
+      // ignore: use_build_context_synchronously
       await Navigator.pushNamed(
           context, MyRoute.homeRoute);
       setState(() {
@@ -128,12 +126,12 @@ class _LoginPageState extends State<LoginPage> {
                         ElevatedButton(
                           onPressed: () =>
                               moveToHome(context),
-                          child: Text("Sign Up"),
                           style: TextButton
                               .styleFrom(
                                   minimumSize:
                                       Size(200,
                                           49)),
+                          child: Text("Sign Up"),
                         ),
                         TextButton(
                           onPressed: () {
